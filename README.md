@@ -54,5 +54,5 @@ AttitudeEstimationUser 클래스는 알고리즘 추가 예제 입니다. Attitu
 * imu_protocol.pde의 ImuProtocol 클래스를 상속한 어떤 클래스 Foo를 정의합니다. 
 * Foo.get_sampling_rate_hz()를 구현합니다. 이 메서드는 센서 혹은 로그파일의 샘플링 레이트를 리턴합니다. 
 * Foo.init_imu()를 구현합니다. 이 메서드는 시리얼포트를 열때 호출되어 IMU 센서 모듈을 초기화하는 역할을 수행합니다. 
-* Foo.parse()를 구현합니다. 이 메서드는 매개변수러 넘겨받은 문자열 message로부터 가속도, 각속도, 지자기 값을 읽어 ImuData 객체를 반환합니다. 
-* 끝으로 create_imu_protocol() 함수를 사용자의 Foo 객체를 생성하고 리턴하도록 수정합니다. 
+* Foo.parse()를 구현합니다. 이 메서드는 매개변수로 넘겨받은 문자열로부터 가속도, 각속도, 지자기 값을 읽 ImuData 객체를 반환합니다. 
+* 끝으로 create_imu_protocol() 함수를 사용자가 정의한 Foo 객체를 리턴하도록 수정합니다. 
