@@ -3,7 +3,7 @@ AHRS Simulator
 
 AHRS(Attitude Heading Reference System) 알고리즘의 동작을 테스트할 수 있는 간단한 시뮬레이터입니다. 시리얼 포트를 통해 입력한 IMU 데이터 혹은 IMU의 로그파일로, 사용자가 작성한  AHRS 알고리즘을 실행하고, 그 출력(eular angle)을 화면상에 3D box로 보여줍니다.  
 
-![ScreenShot](images/ahrs_simulator.png = 250x)
+![ScreenShot](images/ahrs_simulator.png =250x)
 
 알고리즘을 개발할 때엔 matlab이나 python 같은 스크립트 언어를 사용하면 매우 편합니다. 하지만 구현한 알고리즘을 AVR이나 STM32 같은 MCU에서 동작시키려면 C/C++ 코드로 바꿔야 하는데, 그리 수월한 일은 아닙니다. 게다가 AHRS의 출력은 3차원 공간상의 자세인지라 펌웨어로 구현한 알고리즘의 성능을 확인하며 디버깅하는 일 또한 만만치 않습니다. 
 
