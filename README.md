@@ -3,7 +3,7 @@ AHRS Simulator
 
 AHRS(Attitude Heading Reference System) 알고리즘의 동작을 테스트할 수 있는 간단한 시뮬레이터입니다. 시리얼 포트를 통해 입력한 IMU 데이터 혹은 IMU의 로그파일로, 사용자가 작성한  AHRS 알고리즘을 실행하고, 그 출력(eular angle)을 화면상에 3D box로 보여줍니다.  
 
-![ScreenShot](images/ahrs_simulator.png =250x)
+![ScreenShot](images/ahrs_simulator_s.png)
 
 알고리즘을 개발할 때엔 matlab이나 python 같은 스크립트 언어를 사용하면 매우 편합니다. 하지만 구현한 알고리즘을 AVR이나 STM32 같은 MCU에서 동작시키려면 C/C++ 코드로 바꿔야 하는데, 그리 수월한 일은 아닙니다. 게다가 AHRS의 출력은 3차원 공간상의 자세인지라 펌웨어로 구현한 알고리즘의 성능을 확인하며 디버깅하는 일 또한 만만치 않습니다. 
 
@@ -44,6 +44,34 @@ AHRS Simulator는 java(프로세싱)로 구현하였습니다. 알고리즘을 �
   * 이렇게 등록하면 프로그램 실행시 사용자 알고리즘이 UI의 알고리즘 리스트에 추가되고 선택할 수 있습니다.  
 
 AttitudeEstimationUser 클래스는 알고리즘 추가 예제 입니다. AttitudeEstimationUser 클래스의 이름을 바꾸어 사용해도 무방합니다. 
+
+```java
+class AttitudeEstimationUser extends AttitudeEstimation
+{
+	float count;
+	
+	public AttitudeEstimationUser(float hz) {
+		super(hz);
+		count = 0;
+	}
+	
+	public void update(ImuData imu_data) {
+		count += 0.01;
+		//println("AttitudeEstimationUser.update() "+ imu_data.to_string());
+	}
+	
+	public EularAngle get_eular_angle() {
+		float roll = PI*sin(count * 0.1);
+		float pitch = PI/2*sin(count * 0.2);
+		float yaw = PI*sin(count * 0.3) + PI;	
+		
+		float rad2deg = 180/PI;
+		
+		return new EularAngle(roll*rad2deg, pitch*rad2deg, yaw*rad2deg);
+	}
+}
+
+```
 
 ### IMU 센서 메시지 해석기 
 
