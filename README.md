@@ -29,7 +29,7 @@ AHRS Simulator는 java(프로세싱)로 구현하였습니다. 알고리즘을 �
 
 ## 프로그램 수정 
 
-### 알고리즘
+### 자세추정 알고리즘 추가
 
 잘 알려진 알고리즘을 AttitudeEstimationDCM 클래스로 구현하였습니다. 소스의 출처와 관련 문서는 아래의 링크를 참고하세요. 공부의 시작점으로 적절하다고 봅니다.  
 * http://gentlenav.googlecode.com/files/DCMDraft2.pdf
@@ -73,7 +73,7 @@ class AttitudeEstimationUser extends AttitudeEstimation
 
 ```
 
-### IMU 센서 메시지 해석기 
+### IMU 센서 메시지 해석기 추가 
 
 사용자가 보유한 IMU센서는 UART로 ASCII문자열 형식의 메시지를 출력한다고 가정하였습니다. 저는 가진게 myAHRS+ 밖에 없어서 myAHRS+의 메시지만 구현하였습니다. 
 
