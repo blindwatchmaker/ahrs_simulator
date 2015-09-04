@@ -35,7 +35,8 @@ AHRS Simulator는 java(프로세싱)로 구현하였습니다. 알고리즘을 �
 * http://gentlenav.googlecode.com/files/DCMDraft2.pdf
 * https://github.com/ptrbrtz/razor-9dof-ahrs/tree/master/Arduino/Razor_AHRS
 
-사용자는 다음의 절차로 알고리즘을 추가할 수 있습니다. 
+다음은 알고리즘을 추가하는 절차입니다. 
+
 * algorithm.pde 에서 AttitudeEstimation를 상속한 어떤 클래스 Foo를 정의합니다. 
 * Foo.update() 메서드를 구현합니다. 이 메서드는 받은 ImuData 오브젝트로 자세를 추정하는 메서드입니다. 
 * Foo.get_eular_angle() 메서드를 구현합니다. 이 메서드는 추정한 자세를 오일러각으로 바꿔서 출력하는 메서드입니다. 
@@ -47,6 +48,7 @@ AttitudeEstimationUser 클래스는 알고리즘 추가 예제 입니다. Attitu
 ### IMU 센서 메시지 해석기 
 
 사용자가 보유한 IMU센서는 UART로 ASCII문자열 형식의 메시지를 출력한다고 가정하였습니다. 저는 가진게 myAHRS+ 밖에 없어서 myAHRS+의 메시지만 구현하였습니다. 
+
 다음은 IMU센서 메시지 해석기를 추가하는 절차입니다. 
 
 * imu_protocol.pde의 ImuProtocol 클래스를 상속한 어떤 클래스 Foo를 정의합니다. 
