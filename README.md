@@ -5,7 +5,7 @@ AHRS(Attitude Heading Reference System) 알고리즘의 동작을 테스트할 �
 
 ![ScreenShot](images/ahrs_simulator.png)
 
-알고리즘을 개발할 때엔 matlab이나 python 같은 스크립트 언어를 사용하면 매우 편합니다. 하지만 구현한 알고리즘을 AVR이나 STM32 같은 MCU에서 동작시키려면 C/C++ 코드로 바꿔야 하는데, 그리 수월한 일은 아닙니다. 게다가 AHRS의 출력은 3차원 공간상의 자세이기 때문에 펌웨어로 구현한 알고리즘의 성능을 확인하며 디버깅하는 일 또한 만만치 않습니다. 
+알고리즘을 개발할 때엔 matlab이나 python 같은 스크립트 언어를 사용하면 매우 편합니다. 하지만 구현한 알고리즘을 AVR이나 STM32 같은 MCU에서 동작시키려면 C/C++ 코드로 바꿔야 하는데, 그리 수월한 일은 아닙니다. 게다가 AHRS의 출력은 3차원 공간상의 자세인지라 펌웨어로 구현한 알고리즘의 성능을 확인하며 디버깅하는 일 또한 만만치 않습니다. 
 
 AHRS Simulator는 java(프로세싱)로 구현하였습니다. 알고리즘을 프로토타이핑 하기엔, java가 matlab이나 python만 못할지 모르지만, 그래도 C/C++ 보단 덜 성가십니다. 게다가 java코드는 C++과 유사해서 C++로 이식 측면에서 보자면 matlab이나 python보단 낫습니다. 
 
