@@ -46,7 +46,8 @@ AttitudeEstimationUser 클래스는 알고리즘 추가 예제 입니다. Attitu
 
 ### IMU 센서 메시지 해석기 
 
-사용자가 보유한 IMU센서는 UART로 ASCII문자열 형식의 메시지를 출력한다고 가정하였습니다. 저는 가진게 myAHRS+ 밖에 없어서 myAHRS+의 메시지만 구현하였습니다. 다음은 IMU센서 메시지 해석기를 추가하는 절차입니다. 
+사용자가 보유한 IMU센서는 UART로 ASCII문자열 형식의 메시지를 출력한다고 가정하였습니다. 저는 가진게 myAHRS+ 밖에 없어서 myAHRS+의 메시지만 구현하였습니다. 
+다음은 IMU센서 메시지 해석기를 추가하는 절차입니다. 
 
 * imu_protocol.pde의 ImuProtocol 클래스를 상속한 어떤 클래스 Foo를 정의합니다. 
 * Foo.get_sampling_rate_hz()를 구현합니다. 이 메서드는 센서 혹은 로그파일의 샘플링 레이트를 리턴합니다. 
